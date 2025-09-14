@@ -61,11 +61,10 @@ export const AddEmployee = () => {
                 "email" : email
               };
               AddEmployeeService.addEmployee(newEmployee)
-              .then((response) => {                  
+              .then(() => {                  
                   setFirstName("");
                   setLastName("");
                   setEmail("");
-                  console.log(response);
                 })
                 .catch((err) => console.log(err));
               
@@ -79,7 +78,13 @@ export const AddEmployee = () => {
         >
           Add Employee
         </button>
-        <button className="w-full bg-red-700 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition duration-300" onClick={() => navigate("/")}>Cancel</button>
+          <button className="w-full bg-red-700 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition duration-300" 
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/")}
+          }
+          >Cancel
+        </button>
       </form>
     </div>
   )

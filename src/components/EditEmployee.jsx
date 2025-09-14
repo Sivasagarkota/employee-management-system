@@ -10,7 +10,6 @@ export const EditEmployee = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
-  // Fetch employee details on mount
   useEffect(() => {
     EditEmployeeService.getEmployeeById(id)
       .then((response) => {
@@ -21,7 +20,6 @@ export const EditEmployee = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-  // Handle update/save
   const handleSave = (e) => {
     e.preventDefault();
 
@@ -43,7 +41,6 @@ export const EditEmployee = () => {
         </h2>
 
         <form onSubmit={handleSave} className="space-y-6">
-          {/* First Name */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               First Name
@@ -56,7 +53,6 @@ export const EditEmployee = () => {
             />
           </div>
 
-          {/* Last Name */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               Last Name
@@ -69,7 +65,6 @@ export const EditEmployee = () => {
             />
           </div>
 
-          {/* Email */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               Email
@@ -82,21 +77,18 @@ export const EditEmployee = () => {
             />
           </div>
 
-          {/* Buttons */}
           <div className="flex space-x-4 pt-4">
             <button
               type="submit"
               className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
-            >
-              Save
+            >Save
             </button>
 
             <button
               type="button"
               className="flex-1 bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300"
               onClick={() => navigate("/")}
-            >
-              Cancel
+            >Cancel
             </button>
           </div>
         </form>

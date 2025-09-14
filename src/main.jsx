@@ -7,20 +7,20 @@ import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddEmployee from './components/AddEmployee'
 import EditEmployee from './components/EditEmployee'
-import SearchEmployee from './components/SearchEmployee'
+import EmployeeDetails from './components/EmployeeDetails'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <SearchEmployee/>
         <main className="flex-grow container mx-auto py-4">
           <Routes>
             <Route path="/" element={<EmployeeList />} />
             <Route path="/employees" element={<EmployeeList />} />
-            <Route path="/add-employee" element={<AddEmployee/>}></Route>
-            <Route path="/edit-employee/:id" element={<EditEmployee/>}></Route>
+            <Route path="/add-employee" element={<AddEmployee/>}/>
+            <Route path="/employee-details/:id" element={<EmployeeDetails/>}/>
+            <Route path="/edit-employee/:id" element={<EditEmployee/>}/>
           </Routes>
         </main>
 
