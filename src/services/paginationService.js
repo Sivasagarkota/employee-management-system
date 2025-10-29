@@ -1,0 +1,1 @@
+export const PAGINATION_SERVICE = 'http://localhost:8080/employee/pagination';
